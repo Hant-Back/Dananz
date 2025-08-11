@@ -1,0 +1,118 @@
+// Тут ти можеш писати загальні стилі для футера
+.footer {
+    &__content {
+        height: 385px;
+        padding: 20px 10px 0 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__info {
+        padding-bottom: 50px;
+        &-logo img{
+            transition: all .5s ease;
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+    &__feedback {
+        width: 440px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        &-form {
+            display: flex;
+            flex-direction: column;
+            gap: 23px;
+
+            & input{
+                width: 100%;
+                padding-bottom: 10px;
+                border-top: 0;
+                border-left: 0;
+                border-right: 0;
+
+                &:focus {
+                   outline: none; 
+                }
+            }
+        }
+        &-links {
+            display: flex;
+            flex-direction: column;
+            align-self: flex-end;
+            gap: 11px;
+            width: fit-content;
+
+            & p{
+                display: flex;
+                justify-content: start;
+            }
+        }
+        &-icons {
+            display: flex;
+            gap: 18px;
+
+            & a {
+                width: 35px;
+                height: 35px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #D9D9D9;
+                border-radius: 50%;
+            }
+            img {
+                max-width: 32px;
+                max-height: 32px;
+            }
+
+            &--facebook:hover {
+                filter: brightness(0) saturate(100%) invert(11%) sepia(100%) saturate(7481%) hue-rotate(240deg) brightness(100%) contrast(100%);
+                transition: filter 0.3s ease;
+            }
+            &--instagram:hover {
+                filter: brightness(0) saturate(100%) invert(48%) sepia(12%) saturate(7481%) hue-rotate(305deg) brightness(105%) contrast(95%);
+                transition: filter 0.3s ease;
+            }
+            &--tiktok:hover {
+                filter: brightness(0) saturate(100%) invert(75%) sepia(20%) saturate(3000%) hue-rotate(160deg) brightness(105%) contrast(95%);
+                transition: filter 0.3s ease;
+            }
+            &--youtube:hover {
+                filter: brightness(0) saturate(100%) invert(14%) sepia(100%) saturate(7481%) hue-rotate(0deg) brightness(100%) contrast(100%);
+                transition: filter 0.3s ease;
+            }
+        }
+    }
+}
+
+@media (max-width: 690px) {
+    .footer {
+        &__content {
+            height: auto;
+            display: block;
+            padding-bottom: 10px; 
+        }
+        &__info {
+            &-text br{
+                display: none;
+            }
+        }
+        &__feedback {
+            width: 100%;
+        }
+    }
+}
+@media (max-width: 400px) {
+    .footer {
+        &__info {
+            padding: 0 0 20px 0;
+            &-text h1{
+                font-size: 24px;
+            }
+        }
+    }
+}

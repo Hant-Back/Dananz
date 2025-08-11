@@ -1,0 +1,21 @@
+# Node modules
+node_modules/
+
+# Mac system files
+.DS_Store
+
+# Output CSS (завжди можна згенерувати)
+css/*.css
+css/*.css.map
+
+# Optional: лог-файли, тимчасові файли
+*.log
+*.tmp
+*.bak
+
+# OS-specific
+Thumbs.db
+
+# VSCode або інші IDE
+.vscode/
+.idea/
