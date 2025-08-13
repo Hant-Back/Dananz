@@ -328,6 +328,17 @@ ul li {
         }
     }
 }
-@media (max-width: 768px) {
-    
+@media (max-width: 1170px) {
+    .achievements-stats {
+        &__progress {
+            flex-direction: column;
+            gap: 20px;
+            &-stats {
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+        }
+    }
 }
