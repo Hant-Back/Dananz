@@ -1,4 +1,3 @@
-// Тут ти можеш писати загальні стилі для хедера
 .header {
     z-index: 100;
     width: 100%;
@@ -10,28 +9,37 @@
 
     &.scrolled {
         background-color: rgba(0, 0, 0, 0.5);
-
-        .header__nav a {
-            color: #ffffff;
-
-            &:hover {
-                color: gold;
-            }
-        }
-
-        .header__nav-item {
-            color: #ffffff;
-
-            &:last-child {
-                background-color: #2C3878;
-                color: #ffffff;
-            }
-        }
-
         .header-logo {
-            filter: brightness(0) invert(1);
+                filter: brightness(0) invert(1);
+        }
+
+        @media (min-width: 769px) {
+            .header__nav a {
+                color: #ffffff;
+
+                &:hover {
+                    color: gold !important;
+                }
+            }
+
+            .header__nav-item {
+                color: #ffffff;
+
+                &:last-child {
+                    background-color: #2C3878;
+
+                    a {
+                        color: #ffffff !important;
+
+                        &:hover {
+                            color: gold !important;
+                        }
+                    }
+                }
+            }
         }
     }
+
     &__content {
         height: 70px;
         padding: 0 10px;
@@ -39,6 +47,7 @@
         justify-content: space-between;
         align-items: center;
     }
+
     &__nav {
         display: flex;
         justify-content: space-between;
@@ -50,45 +59,64 @@
             gap: 60px;
             align-items: center;
         }
+
         & a {
             font-family: 'Poppins', serif;
             font-size: 16px;
             transition: all .5s ease;
+            color: #333333;
+
             &.active {
                 font-weight: bold;
             }
+
             &:hover {
                 color: gold;
             }
         }
+
         &-item {
             color: #333333;
+
             &:last-child {
                 background-color: #2C3878;
-                color: #ffffff;
                 padding: 14px 32px;
+
+                a {
+                    color: #ffffff !important;
+
+                    &:hover {
+                        color: gold !important;
+                    }
+                }
             }
         }
     }
+
     &__burger {
         display: none;
     }
+
     &-logo {
         transition: all .5s ease;
+
         &:hover {
             transform: scale(1.1);
         }
     }
 }
+
 @media (max-width: 900px) {
     .header {
         &__content {
             padding: 10px;
         }
+
         &__nav {
             &-menu {
                 gap: 15px;
             }
+
             &-item {
                 &:last-child {
                     padding: 7px 16px;
@@ -97,6 +125,7 @@
         }
     }
 }
+
 @media (max-width: 768px) {
     .header {
         &__nav {
@@ -121,7 +150,32 @@
             &.active {
                 right: 0;
             }
+
+            a {
+                color: #000000;
+
+                &:hover {
+                    color: gold;
+                }
+            }
+
+            &-item {
+                color: #000000;
+
+                &:last-child {
+                    background-color: #2C3878;
+
+                    a {
+                        color: #ffffff !important;
+
+                        &:hover {
+                            color: gold !important;
+                        }
+                    }
+                }
+            }
         }
+
         &__burger {
             min-width: 20px;
             width: 40px;
@@ -150,13 +204,16 @@
                     background-color: #000000;
                     transition: all 0.3s;
                 }
+
                 &::before {
                     top: -10px;
                 }
+
                 &::after {
                     top: 10px;
                 }
             }
+
             &.active span {
                 background-color: transparent;
 
@@ -164,6 +221,7 @@
                     top: 0;
                     transform: rotate(45deg);
                 }
+
                 &::after {
                     top: 0;
                     transform: rotate(-45deg);
